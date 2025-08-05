@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghadi</title>
+
+    <style>
+        body {
+            background-image: url(https://t4.ftcdn.net/jpg/05/71/83/47/360_F_571834789_ujYbUnH190iUokdDhZq7GXeTBRgqYVwa.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            padding: 40px;
+            color: white;
+            width: fit-content;
+            border-radius: 20px;
+            border: 1px solid white;
+            margin: 30px auto;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            backdrop-filter: blur(2px);
+            box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.354);
+        }
+
+        .sub-conatiner {
+            display: flex;
+            gap: 15px;
+            padding: 30px;
+        }
+
+        .date-hour,
+        .min-sec {
+            height: 300px;
+            width: 300px;
+            border-radius: 50px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+            backdrop-filter: blur(3px);
+            box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.354);
+
+        }
+
+        .date {
+            text-align: center;
+            padding: 10px;
+            font-weight: 900;
+            position: absolute;
+            top: 5%;
+            font-size: 20px;
+
+        }
+
+        .hour {
+            font-size: 12em;
+            font-weight: 800;
+            text-decoration: line-through 5px rgba(37, 37, 37, 0.728);
+
+        }
+
+        .min-sec {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .min {
+            font-size: 12em;
+            font-weight: 800;
+            text-decoration: line-through 5px rgba(37, 37, 37, 0.728);
+        }
+
+        .sec {
+            text-align: right;
+            padding: 10px;
+            font-weight: 900;
+            position: absolute;
+            top: 79%;
+            right: 15%;
+            font-size: 30px;
+            text-decoration: line-through 3px rgba(37, 37, 37, 0.728);
+        }
+
+        @media (max-width: 427px) {
+            .sub-conatiner {
+            display: flex;
+            flex-direction: column;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-conatiner">
+
+            <div class="date-hour">
+                <div class="date">05/08/2025</div>
+                <div class="hour">12</div>
+            </div>
+            <div class="min-sec">
+                <div class="min">00</div>
+                <div class="sec">00</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let date = document.querySelector(".date");
+        let hour= document.querySelector(".hour");
+        let min = document.querySelector(".min");
+        let sec = document.querySelector(".sec");
+
+        setInterval(() => {
+            let clock = new Date();
+        date.textContent = `${clock.getDate()}/${clock.getMonth()}/${clock.getFullYear()}`;
+
+        hour.textContent = `${clock.getHours()}`;
+        min.textContent = `${clock.getMinutes()}`;
+        sec.textContent = `${clock.getSeconds()}`;
+        }, 1000);
+
+        
+
+        </script>
+</body>
+
+</html>
